@@ -81,4 +81,9 @@ public class Picture
         roof.changeColor("green");
         sun.changeColor("blue");
     }
+
+    public void sunset()
+        {
+        sun.slowMoveVertical(300);
+        }
 }

@@ -3,10 +3,10 @@ public class Main {
 
       //Exercise 1.13
       //Open the house project. Create an instance of class Picture and invoke its draw method. Also, try out the setBlackAndWhite and setColor methods.
-        Picture picture = new Picture();
+        /*Picture picture = new Picture();
         picture.draw();
         picture.setBlackAndWhite();
-        picture.setColor();
+        picture.setColor();*/
 
 
       //Exercise 1.16
@@ -31,6 +31,9 @@ public class Main {
       //Exercise  1.18
       //Add a sunset to the single-sun version of Picture. That is, make the sun go down slowly.
       //Remember: The circle has a method slowMoveVertical that you can use to do this.
+        Picture picture = new Picture();
+        picture.draw();
+        picture.sunset();
 
       //Exercise 1.19
       // If you added your sunset to the end of the draw method (so  that  the  sun  goes  down  automatically  when  the  picture  is  drawn),  change  this  now.
@@ -38,5 +41,10 @@ public class Main {
 
       //Exercise 1.20
       // Make a person walk up to the house after the sunset.
+        Person person = new Person();
+        person.makeVisible();
+        //person.moveRight();
+        person.slowMoveHorizontal(240);
+        person.makeInvisible();
     }
 }
