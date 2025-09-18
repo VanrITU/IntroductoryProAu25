@@ -9,10 +9,10 @@ public class Message {
     }
 
     public User getReceiver() {
-        return receiver;
+        return this.receiver;
     }
 
     public String getText() {
-        return text;
+        return this.text;
     }
 }
