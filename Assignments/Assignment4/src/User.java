@@ -29,12 +29,14 @@ public class User {
         }
             String message = this.inbox[0].getText(); //først gem
 
-            for (int i = 1; i < this.messageCount; i++) { //på den måde går det ik ud af bounce igen
+
+
+            for (int i = 1; i < this.messageCount; i++) { //på den måde går det ik ud af bounce igen - fordi i = 1
                 this.inbox[i-1] = this.inbox[i];
 
 
             }
-            this.inbox[this.messageCount] = null; // en form for clear men kun for den sidste i rækken
+            //this.inbox[this.messageCount] = null; // en form for clear (virkede med omvendt loop... men denne fuckede mig op nu)
             this.messageCount--;
             return message;
 
@@ -44,7 +46,6 @@ public class User {
     public void readAll()  {
         for (int i = 1; i <= this.messageCount; i++) {
             System.out.println(this.inbox[i-1].getText());
-            //this.inbox[i] = null;
         }
         messageCount = 0;
     }
