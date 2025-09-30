@@ -11,7 +11,19 @@ public class ProfanityFilter {
 
     }
 
-    
+    public void main(String[] args) {
+        String swearWord = sc.nextLine();
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine();
+
+
+
+
+
+        }
+
+    }
+
 
 
 
