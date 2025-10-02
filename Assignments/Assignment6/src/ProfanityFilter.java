@@ -13,7 +13,7 @@ public class ProfanityFilter {
 
 
     }
-    static public void main(String[] args) {
+    static public void main() {
         /*String input = """
             hate fudgesicles
             I bleeping hate those fudgesicles.
@@ -24,10 +24,11 @@ public class ProfanityFilter {
 
         System.out.print("Enter text: ");
         String swearWord = sc.nextLine();
-        /*while (sc.hasNextLine()) {
+        while (sc.hasNextLine()) {
             String line = sc.nextLine();
+            System.out.println(line);
 
-        }*/
+        }
 
         System.out.println("Swear word: " + swearWord);
 
