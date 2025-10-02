@@ -1,5 +1,7 @@
 import java.io.ByteArrayInputStream;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ProfanityFilter {
     private static Scanner sc = new Scanner(System.in);
@@ -14,19 +16,22 @@ public class ProfanityFilter {
 
     }
     static public void main() {
-        /*String input = """
-            hate fudgesicles
-            I bleeping hate those fudgesicles.
-            """;
 
-        ByteArrayInputStream testInput = new ByteArrayInputStream(input.getBytes());
-        System.setIn(testInput);*/
-
-        System.out.print("Enter text: ");
+        System.out.println("Text: "); //delete later
         String swearWord = sc.nextLine();
+        Pattern filter = Pattern.compile(swearWord, Pattern.CASE_INSENSITIVE);
+
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
-            System.out.println(line);
+            System.out.println(line); //delete later
+            Matcher matcher = filter.matcher(line);
+
+            boolean matchFound = matcher.find();
+            if (matchFound) {
+                System.out.println("Found something here" + line);
+            } else {
+                continue;
+            }
 
         }
 
