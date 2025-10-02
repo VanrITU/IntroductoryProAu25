@@ -1,7 +1,8 @@
+import java.io.ByteArrayInputStream;
 import java.util.*;
 
 public class ProfanityFilter {
-    private Scanner sc = new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
     private ArrayList<String> swearWords = new ArrayList<>();
     private String textInput;
     private ArrayList<String> censoredWords = new ArrayList<>();
@@ -9,26 +10,38 @@ public class ProfanityFilter {
 
     public ProfanityFilter() {
 
-    }
 
-    public void main(String[] args) {
+
+    }
+    static public void main(String[] args) {
+        /*String input = """
+            hate fudgesicles
+            I bleeping hate those fudgesicles.
+            """;
+
+        ByteArrayInputStream testInput = new ByteArrayInputStream(input.getBytes());
+        System.setIn(testInput);*/
+
+        System.out.print("Enter text: ");
         String swearWord = sc.nextLine();
-        while (sc.hasNextLine()) {
+        /*while (sc.hasNextLine()) {
             String line = sc.nextLine();
 
+        }*/
 
-
-
-
-        }
+        System.out.println("Swear word: " + swearWord);
 
     }
+
+
 
 
 
 
 
 }
+
+
 
 
 /* Outline idea
