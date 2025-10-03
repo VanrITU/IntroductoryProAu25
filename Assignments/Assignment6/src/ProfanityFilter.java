@@ -1,4 +1,5 @@
 import java.io.ByteArrayInputStream;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,27 +19,43 @@ public class ProfanityFilter {
     static public void main() {
 
         System.out.println("Text: "); //delete later
-        String swearWord = sc.nextLine();
-        Pattern filter = Pattern.compile(swearWord, Pattern.CASE_INSENSITIVE);
+        String[] swearWords = sc.nextLine().split(" ");
 
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
+            String[] words = line.split(" ");
             System.out.println(line); //delete later
-            Matcher matcher = filter.matcher(line);
+            StringBuilder builder = new StringBuilder();
 
-            boolean matchFound = matcher.find();
-            if (matchFound) {
-                System.out.println("Found something here" + line);
-            } else {
-                continue;
+            for (String word : words) {
+                String word1 = word.toLowerCase();
+
+                if (word1 != swearWords) {}
+                // if not profanity
+                // sb.append word
+                // else
+                // sb.append CensorWord(word1)
+
             }
+
 
         }
 
-        System.out.println("Swear word: " + swearWord);
+        //System.out.println("Swear word: " + swearWord);
 
     }
 
+    static private String CensorWord(String word) {
+
+        String profanity = "*&#$%";
+        int length = word.length();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            sb.append(profanity.charAt(i%profanity.length()));
+        }
+
+        return sb.toString();
+    }
 
 
 
