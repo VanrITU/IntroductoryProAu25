@@ -1,48 +1,53 @@
-import java.io.ByteArrayInputStream;
-import java.lang.reflect.Array;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ProfanityFilter {
     private static Scanner sc = new Scanner(System.in);
-    private ArrayList<String> swearWords = new ArrayList<>();
-    private String textInput;
-    private ArrayList<String> censoredWords = new ArrayList<>();
-    private String textOutput;
 
-    public ProfanityFilter() {
+    public static void main(String[] args) {
 
-
-
-    }
-    static public void main() {
-
-        System.out.println("Text: "); //delete later
         String[] swearWords = sc.nextLine().split(" ");
 
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
             String[] words = line.split(" ");
-            System.out.println(line); //delete later
-            StringBuilder builder = new StringBuilder();
+
+            StringBuilder output = new StringBuilder();
 
             for (String word : words) {
-                String word1 = word.toLowerCase();
 
-                if (word1 != swearWords) {}
-                // if not profanity
-                // sb.append word
-                // else
-                // sb.append CensorWord(word1)
+                String wordLowC = word.toLowerCase();
+                String wordNoPunct = wordLowC.replaceAll("\\p{Punct}","");
+                String wordPunct = wordLowC.replaceAll("[a-zA-Z]", "");
+                boolean censored = false;
 
+                for (String swearWord : swearWords) {
+                    //System.out.println(swearWord);
+                    String swear1 = swearWord.toLowerCase();
+                    if (swearWord.isEmpty()) {
+                        System.out.println(line);
+                        return;
+                    }
+
+                    if (wordNoPunct.equals(swear1)) {
+                        if (wordNoPunct.matches("-?\\d+(\\.\\d+)?")) {
+                            output.append(CensorWord(swearWord) + " ");
+                            censored = true;
+                            break;
+                        } else {
+                            output.append(CensorWord(swearWord) + wordPunct + " ");
+                            censored = true;
+                            break;
+                        }
+                    }
+                }
+                if (censored == false) {
+                    output.append(word + " ");
+
+                }
             }
 
-
+            System.out.println(output.toString().trim());
         }
-
-        //System.out.println("Swear word: " + swearWord);
-
     }
 
     static private String CensorWord(String word) {
@@ -56,16 +61,69 @@ public class ProfanityFilter {
 
         return sb.toString();
     }
-
-
-
-
-
-
 }
 
 
+/*
+            } else {
+                while (sc.hasNextLine()) {
+                    String line = sc.nextLine();
+                    String[] words = line.split(" ");
+                    StringBuilder output = new StringBuilder();
 
+                    String swear1 = swearWord.toLowerCase();
+                    for  (String word : words) {
+                        String word1 = word.toLowerCase();
+                        if (swear1.contains(word1)) {
+                            output.append(CensorWord(swearWord) + " ");
+                            break;
+                        } else {
+                            output.append(word + " ");
+                            break;
+                        }
+                    }
+                    System.out.println(output);
+                }
+            }*/
+
+
+
+        /*
+
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine();
+                String[] words = line.split(" ");
+                //System.out.println(line); //delete later
+                StringBuilder output = new StringBuilder();
+
+                for (String word : words) {
+                    String word1 = word.toLowerCase();
+
+                    for (String swearWord : swearWords) {
+                        String swear1 = swearWord.toLowerCase();
+                        if (word1.contains(swear1)) {
+                            output.append(CensorWord(swearWord) + " ");
+                            break;
+                        } else {
+                            output.append(word + " ");
+                            break;
+                        }
+                    }
+                    // if not profanity
+                    // sb.append word
+                    // else
+                    // sb.append CensorWord(word1)
+
+
+                }
+                System.out.println(output);
+
+            }
+
+
+            //System.out.println("Swear word: " + swearWord);
+
+        }*/
 
 /* Outline idea
 

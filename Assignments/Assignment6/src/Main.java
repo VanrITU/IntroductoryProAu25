@@ -5,17 +5,14 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         String input = """
-            fuck
-            Go Fuck yourself
-            fuck
-            you
-            hey!
+            
+            This is a test, without any filtered words.
             """;
 
-        ByteArrayInputStream testInput = new ByteArrayInputStream(input.getBytes());
-        System.setIn(testInput);
+        //ByteArrayInputStream testInput = new ByteArrayInputStream(input.getBytes());
+        //System.setIn(testInput);
         ProfanityFilter filter = new ProfanityFilter();
-        filter.main();
+        //filter.main(input);
 
     }
 
