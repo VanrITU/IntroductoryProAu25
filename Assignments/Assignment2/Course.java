@@ -1,8 +1,11 @@
-public class Course
+public class Course //creating class
 {
-    private String courseName;
+    // Class attributes
+    private String courseName; //fields
     private int enrollments;
 
+    //class constructor
+    // you set initial values here ect.
     public Course(String courseName, int enrollments)
     {
         this.courseName = courseName;
@@ -40,4 +43,12 @@ public class Course
         }
 
     }
+
+    /* ex. of main class
+    public stati void main (String[] args) {
+        Main myObj = new Main(); //creating an object of class Main
+        }
+     */
+
+
 }

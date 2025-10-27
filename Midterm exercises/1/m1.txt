@@ -1,0 +1,56 @@
+Question set-1-answers
+
+2)
+new Room()
+new Room(100, new String[]{"Per","Ton","Siph"})
+
+3)
+High cohesion is desirable in class design
+
+4)
+x71
+
+5)
+All constructors of MiniRobot must start with a call to the constructor of Robot
+MiniRobot is a subclass of Robot
+
+6)
+Any non-abstract class implementing InfoProc has at least three methods
+A class implementing InfoProc cannot have a method with header String printInfo()
+
+7)
+if( itr.next() % 2 == 0) itr.remove(); 
+
+
+8)
+"Phil"->41
+"Hana"->12
+"Chila"->32
+
+9)
+assertEquals(false, C.check(1, new int[]{5,1,2,10}))
+assertEquals(false,C.check(0, new int[10]))
+
+10)
+String
+
+11)
+char
+float
+long
+
+12)
+2
+
+13)
+5
+
+14)
+41.9
+
+15)
+a.length is 4
+b[1] is equal to "H"
+
+16)
+9,9,9

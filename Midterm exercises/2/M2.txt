@@ -1,0 +1,91 @@
+Question set-2-answers
+
+2)
+public class C extends A {...}
+public class C implements I {...}
+public class C extends A implements I {...}
+public class C extends A implements I, J {...}
+
+3)
+str[0].equals(str[2]);
+
+4)
+HashMap and Map
+
+
+5)
+init is a static method
+Lab has a constructor that takes two parameters
+
+6)
+A local variable is only accessible during the execution of the block where it is declared
+
+
+7)
+0
+1
+
+
+8)
+public MyClass(){name="J";}
+public MyClass(String name){this.name=name;}
+
+
+9)
+"Cesar" -> 40
+"Bertil" -> 30
+"Adam" -> 25
+
+
+10)
+var m=new MyClass(5);
+
+11)
+boolean, Item
+
+
+12)
+The display method in class A
+
+
+13)
+It's a measure of how tightly interconnected classes are
+
+
+14)
+TreeSet<String>
+
+
+15)
+
+public void foo() { 
+     throw new MyRuntimeException(); 
+} 
+
+
+public void bar() throws MyCheckedException { 
+      throw new MyCheckedException(); 
+} 
+
+
+public void foo(boolean b) throws MyCheckedException { 
+      if (b) { throw new MyCheckedException(); } 
+      else { throw new MyRuntimeException(); } 
+ } 
+
+
+
+
+16)
+The value of nums[nums.length-1] changes to 11 in the class field
+
+
+
+17)
+assertTrue(A.myMethod(true, true));
+assertEquals(true, A.myMethod(false, false));
+
+
+
+18)
+You must always be able to use the object of a sub class whenever an object of a super class is expected

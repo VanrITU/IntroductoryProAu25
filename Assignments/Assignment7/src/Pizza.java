@@ -34,6 +34,7 @@ public class Pizza extends Food {
                 } else {
                     System.out.print(", ");
                 }
+
             }
         }
 
@@ -41,6 +42,5 @@ public class Pizza extends Food {
     }
 
 
- else
 
 }

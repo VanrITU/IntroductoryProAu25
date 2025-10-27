@@ -17,7 +17,7 @@ public class Forest {
             totalTrees.append(tree.toString());
         }
         return "Forest(" + totalTrees.toString() + ")";
-       //return "Forest(" + trees.toString() + ")"; // this one didnt work beauce it printed as an obj with []
+       //return "Forest(" + trees.toString() + ")"; // this one didnt work because it printed as an obj with []
     }
 
     public void growOneYear() {
