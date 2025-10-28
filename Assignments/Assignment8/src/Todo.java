@@ -75,33 +75,20 @@ public class Todo {
 
     }
 
-    public void printPrioritized() {
-        StringBuilder sb = new StringBuilder("Prioritized todo:\n-----------------\n");
-        ArrayList<Integer> prio1list = new ArrayList<Integer>();
-        ArrayList<Integer> prio2list = new ArrayList<Integer>();
-        ArrayList<Integer> prio3list = new ArrayList<Integer>();
-        ArrayList<Integer> prio4list = new ArrayList<Integer>();
+    public StringBuilder Prioritized(int prio) {
+        ArrayList<Integer> prioList = new ArrayList<Integer>();
+        StringBuilder sb = new StringBuilder();
 
         for (Task task : todoList) {
 
-            if (task.getPrio() == 1) {
-                prio1list.add(task.getTime());
-            } else if (task.getPrio() == 2) {
-                prio2list.add(task.getTime());
-            } else if (task.getPrio() == 3) {
-                prio3list.add(task.getTime());
-            } else if (task.getPrio() == 4) {
-                prio4list.add(task.getTime());
+            if (task.getPrio() == prio) {
+                prioList.add(task.getTime());
             }
 
         }
+        Collections.sort(prioList);
 
-        Collections.sort(prio1list);
-        Collections.sort(prio2list);
-        Collections.sort(prio3list);
-        Collections.sort(prio4list);
-
-        for  (Integer time : prio1list) {
+        for  (Integer time : prioList) {
             for (Task task : todoList) {
                 if (task.getTime() == time) {
                     sb.append(task.toString());
@@ -110,39 +97,20 @@ public class Todo {
             }
         }
 
-        for  (Integer time : prio2list) {
-            for (Task task : todoList) {
-                if (task.getTime() == time) {
-                    sb.append(task.toString());
-                    sb.append("\n");
-                }
-            }
+        return sb;
+
+    }
+
+    public void printPrioritized() {
+        System.out.print("Prioritized todo:\n-----------------\n");
+        StringBuilder sb = new StringBuilder();
+        int[] prioIndex = new int[3];
+
+        for (int i=0; i < prioIndex.length+1; i++) {
+            sb.append(Prioritized(i+1));
         }
 
-        for  (Integer time : prio3list) {
-            for (Task task : todoList) {
-                if (task.getTime() == time) {
-                    sb.append(task.toString());
-                    sb.append("\n");
-                }
-            }
-        }
-
-        for  (Integer time : prio4list) {
-            for (Task task : todoList) {
-                if (task.getTime() == time) {
-                    sb.append(task.toString());
-                    sb.append("\n");
-                }
-            }
-        }
-        sb.delete(sb.length()-1, sb.length());
-        System.out.println(sb);
-
-
-        //System.out.print("Prioritized todo:\n-----------------");
-
-
+        System.out.print(sb);
 
 
     }
