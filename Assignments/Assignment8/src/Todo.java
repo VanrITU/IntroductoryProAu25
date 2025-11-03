@@ -76,7 +76,7 @@ public class Todo {
     }
 
     public StringBuilder Prioritized(int prio) {
-        ArrayList<Integer> prioList = new ArrayList<Integer>();
+        ArrayList<Integer> prioList = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
 
         for (Task task : todoList) {
@@ -104,9 +104,9 @@ public class Todo {
     public void printPrioritized() {
         System.out.print("Prioritized todo:\n-----------------\n");
         StringBuilder sb = new StringBuilder();
-        int[] prioIndex = new int[3];
+        //int[] prioIndex = new int[3];
 
-        for (int i=0; i < prioIndex.length+1; i++) {
+        for (int i=0; i < 5; i++) {
             sb.append(Prioritized(i+1));
         }
 
