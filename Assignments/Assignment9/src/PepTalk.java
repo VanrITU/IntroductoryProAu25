@@ -9,9 +9,9 @@ public class PepTalk {
 
     public static void strSplitter(String input) {
         input = input.replaceAll("[^a-zA-Z]", "").toLowerCase();
-        Matcher match = Pattern.compile("[^aeiou]?[aeiou]((ng|[^aeiou])(?![aeiou]))?",
+        Matcher match = Pattern.compile("[^aeiou ]{0,2}[aeiou](([^aeiou ]+ |([^aeiou ])(?![aeiou]))?)",
                 Pattern.CASE_INSENSITIVE).matcher(input);
-
+        /*/[^aeiou ]{0,2}[aeiou](([^aeiou ]+ |([^aeiou ])(?![aeiou]))?)/gm*/
 
         int s=0;
         while (match.find()) {
@@ -23,7 +23,7 @@ public class PepTalk {
 
 
     public static StringBuilder output(String input) {
-        PepTalk.strSplitter(input);
+        //PepTalk.strSplitter(input);
         StringBuilder output = new StringBuilder();
         String[] eachWord = input.split("\\s+");
 
@@ -34,7 +34,7 @@ public class PepTalk {
             for (String ogSyl : splittedStr) {
                 output.append(ogSyl);
 
-                Matcher match = Pattern.compile("[aeiou][$\\S]?",
+                Matcher match = Pattern.compile("[aeiou][$\\S]*",
                         Pattern.CASE_INSENSITIVE).matcher(ogSyl);
                 if (match.find()) {
                     output.append("p" + match.group());
